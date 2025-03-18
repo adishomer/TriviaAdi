@@ -1,8 +1,11 @@
 package com.example.triviaadi;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,14 +14,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private Button btna1,btna2,btna3,btna4;
     private TextView tvQueation;
     private TextView tvQueationNumber, tvPoints, tvGameOver;
-    private Collection collection;
+    private Collection2 collection;
     private Question q;
+    private LinearLayout llg;
     private int points=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("bgColor");
+        llg = findViewById(R.id.activity_game);
+        setBackgroundColorGame(str);
 
         tvQueation= findViewById(R.id.tvQuestion);
 
@@ -39,7 +48,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         tvGameOver.setVisibility(View.INVISIBLE);
 
-        collection= new Collection();
+        collection= new Collection2();
         collection.initQuestions();
 
         nextOuestion();
@@ -105,5 +114,39 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         tvQueationNumber.setText("Queation number: "+1);
         tvGameOver.setVisibility(View.INVISIBLE);
         this.nextOuestion();
+    }
+    public void setBackgroundColorGame(String color)
+    {
+        switch (color)
+        {
+            case "Red":
+            {
+
+                llg.setBackgroundColor(Color.RED);
+                break;
+            }
+            case "Blue":
+            {
+
+                llg.setBackgroundColor(Color.BLUE);
+                break;
+            }
+            case "Pink":
+            {
+
+                llg.setBackgroundColor(Color.argb(255,255,192,203));
+                break;
+            }
+            case "Yellow":
+            {
+
+                llg.setBackgroundColor(Color.YELLOW);
+                break;
+            }
+
+            default:
+
+                llg.setBackgroundColor(Color.WHITE);
+        }
     }
 }
