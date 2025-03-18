@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Instruction">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:text="הוראות המשחק-"
+        android:textSize="40sp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ענה על שאלות מתוך 4 תשובות אפשריות.
+כל תשובה נכונה תביא לך נקודות.
+המשחק נגמר כאשר ענית על כל השאלות או אחרי מספר סיבובים.
+הזוכה הוא מי שצבר את הניקוד הגבוה ביותר.
+בהצלחה 😊"
+        android:textSize="40sp"></TextView>
+
+</LinearLayout>
